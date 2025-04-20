@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   // devIndicators: {
   //   appIsrStatus: false,
   // },
-  swcMinify: true,
+  // swcMinify: true,
 };
 
 export default nextConfig;
