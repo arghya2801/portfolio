@@ -14,26 +14,25 @@ import {
 const Navbar = () => {
     return (
         <>
-            <div>Navbar</div>
-                <div className="flex justify-between items-center gap-x-4">
-                    <div>Icon</div>
-                    <NavigationMenu>
-                        <NavigationMenuList>
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>Home</NavigationMenuTrigger>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>About</NavigationMenuTrigger>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>Blog</NavigationMenuTrigger>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
-                            </NavigationMenuItem>
-                        </NavigationMenuList>
-                    </NavigationMenu>
-                </div>
+            <div className="h-20 sticky top-0 flex justify-between items-center gap-x-4 px-20 text-4xl bg-gradient-to-b from-background to-opacity-50">
+                <div>Icon</div>
+                <NavigationMenu>
+                    <NavigationMenuList className='text-4xl'>
+                        <NavigationMenuItem>
+                            <NavigationMenuTrigger>Home</NavigationMenuTrigger>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <NavigationMenuTrigger>About</NavigationMenuTrigger>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <NavigationMenuTrigger>Blog</NavigationMenuTrigger>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                            <NavigationMenuTrigger>Contact</NavigationMenuTrigger>
+                        </NavigationMenuItem>
+                    </NavigationMenuList>
+                </NavigationMenu>
+            </div>
 
         </>
 
