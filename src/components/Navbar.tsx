@@ -1,13 +1,13 @@
 import React from 'react'
 import {
     NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuIndicator,
+    // NavigationMenuContent,
+    // NavigationMenuIndicator,
     NavigationMenuItem,
-    NavigationMenuLink,
+    // NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-    NavigationMenuViewport,
+    // NavigationMenuViewport,
 } from "@/components/ui/navigation-menu"
 
 
