@@ -1,4 +1,6 @@
+"use client"
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 interface Skill {
     name: string;
@@ -72,42 +74,47 @@ const skillCategories: SkillCategory[] = [
 ];
 
 const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
-    return (
-        <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 flex items-center gap-2">
-            <div className="h-8 w-8 flex items-center justify-center">
-                <Image
-                    src={`https://svgl.app/api/${skill.slug}`}
-                    alt={`${skill.name} logo`}
-                    width={32}
-                    height={32}
-                />
-            </div>
-            <span>{skill.name}</span>
-        </div>
-    );
+  const svgPath = `/svgs/${skill.slug}.svg`;
+  const placeholder = "/file.svg"; // Ensure this path is correct
+
+  return (
+    <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 flex items-center gap-2">
+      <div className="h-8 w-8 flex items-center justify-center">
+        <Image
+          src={svgPath}
+          alt={`${skill.name} logo`}
+          height={28}
+          width={28}
+          style={{ height: "auto" }}
+          onError={(e) => { (e.target as HTMLImageElement).src = placeholder; }}
+        />
+      </div>
+      <span>{skill.name}</span>
+    </div>
+  );
 };
 
 const CategorySection: React.FC<{ category: SkillCategory }> = ({ category }) => {
-    return (
-        <div className="mb-8">
-            <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-            <div className="grid grid-cols-1 gap-4">
-                {category.skills.map((skill, index) => (
-                    <SkillCard key={index} skill={skill} />
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div className="mb-8">
+      <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
+      <div className="grid grid-cols-1 gap-4">
+        {category.skills.map((skill, index) => (
+          <SkillCard key={index} skill={skill} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 const SkillsGrid: React.FC = () => {
-    return (
-        <div className="py-8 grid grid-cols-5 gap-8">
-            {skillCategories.map((category, index) => (
-                <CategorySection key={index} category={category} />
-            ))}
-        </div>
-    );
+  return (
+    <div className="py-8 grid grid-cols-5 gap-8">
+      {skillCategories.map((category, index) => (
+        <CategorySection key={index} category={category} />
+      ))}
+    </div>
+  );
 };
 
 export default SkillsGrid;
