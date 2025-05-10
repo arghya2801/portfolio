@@ -10,10 +10,10 @@ const page = () => {
         <div className="">
           <div className="md:w-1/2">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-              Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">Arghya Chakrabarty</span>
+              "Hi, I'm" <span className="text-indigo-600 dark:text-indigo-400">Arghya Chakrabarty</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
-              A passionate Full Stack Developer with a knack for building scalable and user-friendly web applications. I thrive on turning complex problems into elegant solutions.
+              "A passionate Full Stack Developer with a knack for building scalable and user-friendly web applications. I thrive on turning complex problems into elegant solutions."
             </p>
             <div className="flex gap-4">
               <Link href="/projects" className="bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300">
@@ -54,7 +54,7 @@ const page = () => {
           {/* Add more skills as needed */}
         </div>
       </section>
-
+{/* 
       <div className="flex justify-center">
         <div className="m-4">
           <img src="/vercel.svg" alt="Vercel Logo" className="w-24 h-24" />
@@ -64,8 +64,8 @@ const page = () => {
         </div>
         <div className="m-4">
           <img src="/tailwind-css.svg" alt="Tailwind CSS Logo" className="w-24 h-24" />
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
     </>
   )
 }
