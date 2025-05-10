@@ -1,4 +1,4 @@
-import React from 'react';
+import Image from 'next/image';
 
 interface Skill {
     name: string;
@@ -75,11 +75,11 @@ const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
     return (
         <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 flex items-center gap-2">
             <div className="h-8 w-8 flex items-center justify-center">
-                {/* Using regular img tag instead of Next.js Image component */}
-                <img
+                <Image
                     src={`https://svgl.app/api/${skill.slug}`}
                     alt={`${skill.name} logo`}
-                    className="w-8 h-8"
+                    width={32}
+                    height={32}
                 />
             </div>
             <span>{skill.name}</span>

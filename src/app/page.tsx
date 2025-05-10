@@ -8,12 +8,12 @@ export default function Home() {
     return (
         <>
             <Navbar />
-            <div>Home Page of NextJS (test3)</div>
+            <div>Home Page of NextJS (test4)</div>
             <div className="flex mx-32">
                 <div className="">
                     <div className="md:w-1/2">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-                            "Hi, I'm" <span className="text-indigo-600 dark:text-indigo-400">Arghya Chakrabarty</span>
+                            Hi, I&apos;m <span className="text-indigo-600 dark:text-indigo-400">Arghya Chakrabarty</span>
                         </h1>
                         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
                             A passionate Full Stack Developer with a knack for building scalable and user-friendly web applications. I thrive on turning complex problems into elegant solutions.
