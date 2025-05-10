@@ -7,9 +7,9 @@ const nextConfig: NextConfig = {
   // },
   // swcMinify: true,
   // fastRefresh: true,
-  images: {
-    domains: ['svgl.app'],
-  },
+  // images: {
+  //   domains: ['api.svgl.app'],
+  // },
 };
 
 export default nextConfig;
