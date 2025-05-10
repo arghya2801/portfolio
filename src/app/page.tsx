@@ -15,7 +15,7 @@ export default function Home() {
                             Hi, I'm <span className="text-indigo-600 dark:text-indigo-400">Arghya Chakrabarty</span>
                         </h1>
                         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
-                            A passionate professional Full Stack Developer with a knack for building scalable and user-friendly web applications. I thrive on turning complex problems into elegant solutions.
+                            A passionate Full Stack Developer with a knack for building scalable and user-friendly web applications. I thrive on turning complex problems into elegant solutions.
                         </p>
                         <div className="flex gap-4">
                             <Link href="/projects" className="bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300">
