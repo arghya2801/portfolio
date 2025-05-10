@@ -3,6 +3,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
+::selection {
+  background-color: #5e59ff; /* Replace with your desired background color */
+  color: black; /* Optional: Replace with your desired text color */
+}
+
+::-moz-selection {
+  background-color: #5e59ff; /* Replace with your desired background color */
+  color: black; /* Optional: Replace with your desired text color */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
