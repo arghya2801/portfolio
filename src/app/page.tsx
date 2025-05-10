@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import SkillsGrid from "@/components/SkillGrid";
 // import Image from "next/image";
 import Link from "next/link";
 
@@ -7,7 +8,7 @@ export default function Home() {
     return (
         <>
             <Navbar />
-            <div>Home Page of NextJS (test)</div>
+            <div>Home Page of NextJS (test3)</div>
             <div className="flex mx-32">
                 <div className="">
                     <div className="md:w-1/2">
@@ -42,7 +43,7 @@ export default function Home() {
 
             <section className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
                 <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-100 mb-6">Skills</h2>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 shadow-sm">JavaScript</div>
                     <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 shadow-sm">React</div>
                     <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 shadow-sm">Next.js</div>
@@ -54,7 +55,8 @@ export default function Home() {
                     <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 shadow-sm">CSS</div>
                     <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 shadow-sm">Tailwind CSS</div>
                     {/* Add more skills as needed */}
-                </div>
+                {/* </div> */}
+                <SkillsGrid />
             </section>
 
             <div className="flex justify-center">
