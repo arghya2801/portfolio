@@ -1,8 +1,10 @@
+"use client"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import SkillsGrid from "@/components/SkillGrid";
 // import Image from "next/image";
 import Link from "next/link";
+import { ReactTyped } from "react-typed";
 
 export default function Home() {
     return (
@@ -13,10 +15,18 @@ export default function Home() {
                 <div className="">
                     <div className="md:w-1/2">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-                            Hi, I&apos;m <span className="text-indigo-600 dark:text-indigo-400">Arghya Chakrabarty</span>
+                            Hi, I&apos;m {' '}
+                            {/* <span className="text-indigo-600 dark:text-indigo-400">Arghya Chakrabarty</span> */}
+                            <ReactTyped 
+                                strings={["Arghya Chakrabarty"]} 
+                                typeSpeed={60}
+                                backSpeed={30}
+                                backDelay={2000}
+                                loop={true}
+                                className="text-indigo-600 dark:text-indigo-400" />
                         </h1>
                         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
-                            A passionate Full Stack Developer with a knack for building scalable and user-friendly web applications. I thrive on turning complex problems into elegant solutions.
+                            A passionate Full Stack Developer with a knack for building scalable and user-friendly web applications, and a strong interest in cloud computing. I thrive on turning complex problems into elegant solutions.
                         </p>
                         <div className="flex gap-4">
                             <Link href="/projects" className="bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300">
