@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
   //   appIsrStatus: false,
   // },
   // swcMinify: true,
+  // fastRefresh: true,
+  images: {
+    domains: ['svgl.app'],
+  },
 };
 
 export default nextConfig;
