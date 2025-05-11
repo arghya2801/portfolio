@@ -34,13 +34,16 @@ interface AchievementsTimelineProps {
 
 const AchievementsTimeline: React.FC<AchievementsTimelineProps> = ({ achievements }) => (
     <div className="relative">
-        <div className="absolute left-4 right-4 top-1 bottom-0 w-px bg-indigo-400 ml-1"></div>
+        <div className="absolute left-4 top-4 bottom-0 w-px bg-indigo-400"></div>
         <div className="space-y-8">
             {achievements.map((ach, idx) => (
                 <div key={idx} className="flex items-start mt-2">
-                    <div className="relative z-10 -ml-2.5 mt-1.5">
-                        <div className="w-5 h-5 rounded-full bg-indigo-400 flex items-center justify-center">
-                            <div className="w-2 h-2 rounded-full bg-white"></div>
+                    <div className="relative z-10">
+                        <div
+                            className="w-8 h-8 rounded-full bg-[#020618] flex items-center justify-center"
+                            style={{ left: 'calc(4px - 0.625rem)', top: '0.25rem' }}
+                        >
+                            <div className="w-4 h-4 rounded-full bg-indigo-400"></div>
                         </div>
                     </div>
                     <div className="ml-6">
