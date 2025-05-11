@@ -61,8 +61,9 @@ const skillCategories: SkillCategory[] = [
         ]
     },
     {
-        title: "DevOps & Tools",
+        title: "Dev Tools",
         skills: [
+            { name: "Linux", slug: "linux" },
             { name: "Git", slug: "git" },
             { name: "GitHub", slug: "github" },
             { name: "Docker", slug: "docker" },
@@ -83,9 +84,9 @@ const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
         <Image
           src={svgPath}
           alt={`${skill.name} logo`}
-          height={28}
-          width={28}
-          style={{ height: "auto" }}
+          height={32}
+          width={32}
+          style={{ height: "auto", maxHeight: "36px" }}
           onError={(e) => { (e.target as HTMLImageElement).src = placeholder; }}
         />
       </div>
