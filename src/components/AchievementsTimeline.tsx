@@ -2,12 +2,12 @@ import React from 'react';
 
 const achievementsData = [
     {
-        title: 'Gloabl Rank of 1608 in TCS CodeVita Season 12',
+        title: 'Global Rank of 1608 in TCS CodeVita Season 12',
         description: 'Qualified for TCS CodeVita Season 12 Round 2 and got a global rank of 1608.',
         date: 'January 2025'
     },
     {
-        title: 'Qulified Internal Round of SIH',
+        title: 'Qualified Internal Round of SIH',
         description: 'Reached the penultimate stage of Smart India Hackathon after qualifying in the internal round of SIH at VIT as team OMADA.',
         date: 'November 2024'
     },

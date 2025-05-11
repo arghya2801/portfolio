@@ -25,7 +25,7 @@ const CertificationsGrid = () => {
             <strong>Verification Code:</strong> {cert.verificationCode}
           </p>
           <p className="text-gray-700">
-            <strong>Date:</strong> {new Date(cert.date).toLocaleDateString()}
+            <strong>Date:</strong> {cert.date}
           </p>
           <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">View Certification</a>
         </div>
