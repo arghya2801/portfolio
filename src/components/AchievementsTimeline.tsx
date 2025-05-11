@@ -1,25 +1,20 @@
 import React from 'react';
 
-const achievementsData = [ // Renamed to avoid confusion with the prop name
+const achievementsData = [
     {
-        title: 'Graduated with Honors',
-        description: 'Completed Bachelor of Science in Computer Science with top honors.',
-        date: 'June 2020'
+        title: 'Gloabl Rank of 1608 in TCS CodeVita Season 12',
+        description: 'Qualified for TCS CodeVita Season 12 Round 2 and got a global rank of 1608.',
+        date: 'January 2025'
     },
     {
-        title: 'First Place - Hackathon',
-        description: 'Led a team to victory in a 24-hour hackathon focused on AI solutions.',
-        date: 'September 2021'
+        title: 'Qulified Internal Round of SIH',
+        description: 'Reached the penultimate stage of Smart India Hackathon after qualifying in the internal round of SIH at VIT as team OMADA.',
+        date: 'November 2024'
     },
     {
-        title: 'Published Research Paper',
-        description: 'Published a paper on machine learning in a reputed international journal.',
-        date: 'March 2022'
-    },
-    {
-        title: 'Promoted to Senior Developer',
-        description: 'Recognized for outstanding contributions and promoted at XYZ Corp.',
-        date: 'August 2023'
+        title: 'JEE Mains percentile of 92.1201280',
+        description: 'Got percentile of 92.1201280 in JEE Mains and qualified for JEE Advanced.',
+        date: 'July 2022'
     }
 ];
 
