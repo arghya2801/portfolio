@@ -7,6 +7,14 @@ import Link from 'next/link';
 const projects = [
     {
         id: 1,
+        name: 'Predictive Maintence for Industry Devices',
+        image: '/images/project1.jpg', // Replace with your image path
+        description:
+            'Predicts maintenance needs for industrial devices using machine learning algorithms utlizing IoT.',
+        link: '/projects/predictive-maintenance',
+    },
+    {
+        id: 2,
         name: 'E-commerce Platform',
         image: '/images/project1.jpg', // Replace with your image path
         description:
@@ -14,7 +22,7 @@ const projects = [
         link: '/projects/e-commerce-platform',
     },
     {
-        id: 2,
+        id: 3,
         name: 'Portfolio Website',
         image: '/images/project2.jpg', // Replace with your image path
         description:
@@ -22,7 +30,7 @@ const projects = [
         link: '/projects/portfolio-website',
     },
     {
-        id: 3,
+        id: 4,
         name: 'Task Management App',
         image: '/images/project3.jpg', // Replace with your image path
         description:
@@ -30,7 +38,7 @@ const projects = [
         link: '/projects/task-management-app',
     },
     {
-        id: 4,
+        id: 5,
         name: 'Blog Application',
         image: '/images/project4.jpg', // Replace with your image path
         description:
