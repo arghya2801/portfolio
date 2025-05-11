@@ -1,4 +1,6 @@
 "use client"
+import AchievementsTimeline from "@/components/AchievementsTimeline";
+import CertificationsGrid from "@/components/CertificationsGrid";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import SkillsGrid from "@/components/SkillGrid";
@@ -10,14 +12,13 @@ export default function Home() {
     return (
         <>
             <Navbar />
-            <div className="mt-16 flex mx-32">
+            <div className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
                 <div className="">
-                    <div className="md:w-1/2">
+                    <div className="md:w-3/4">
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 dark:text-gray-100 mb-4">
                             Hi, I&apos;m {' '}
-                            {/* <span className="text-indigo-600 dark:text-indigo-400">Arghya Chakrabarty</span> */}
-                            <ReactTyped 
-                                strings={["Arghya Chakrabarty"]} 
+                            <ReactTyped
+                                strings={["Arghya Chakrabarty"]}
                                 typeSpeed={60}
                                 backSpeed={30}
                                 backDelay={2000}
@@ -27,23 +28,10 @@ export default function Home() {
                         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
                             A passionate Full Stack Developer with a knack for building scalable and user-friendly web applications, and a strong interest in cloud computing. I thrive on turning complex problems into elegant solutions.
                         </p>
-                        <div className="flex gap-4">
-                            <Link href="/projects" className="bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300">
-                                View My Projects
-                            </Link>
-                        </div>
+                        <Link href="/projects" className="bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300">
+                            View My Projects
+                        </Link>
                     </div>
-                    {/* <div className="md:w-1/3">
-                        <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-lg">
-                            <Image
-                                src="/profilePic.jpg"
-                                alt="Arghya Chakrabarty Profile Picture"
-                                layout="fill"
-                                objectFit="cover"
-                                priority // Helps in improving LCP for important images
-                            />
-                        </div>
-                    </div> */}
                 </div>
             </div>
 
@@ -51,6 +39,22 @@ export default function Home() {
                 <h2 className="text-4xl font-bold text-indigo-500 dark:text-indigo-400 mb-6">Skills</h2>
                 <div className="border-b border-gray-400 dark:border-gray-600 w-22"></div> {/* Adjust width as needed */}
                 <SkillsGrid />
+            </section>
+
+            <section className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
+                <h2 className="text-4xl font-bold text-indigo-500 dark:text-indigo-400 mb-6">Certifications</h2>
+                <div className="border-b border-gray-400 dark:border-gray-600 w-57"></div> {/* Adjust width as needed */}
+                <div className="mt-6">
+                    <CertificationsGrid />
+                </div>
+            </section>
+
+            <section className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
+                <h2 className="text-4xl font-bold text-indigo-500 dark:text-indigo-400 mb-6">Acheivements</h2>
+                <div className="border-b border-gray-400 dark:border-gray-600 w-60"></div> {/* Adjust width as needed */}
+                <div className="mt-6">
+                    <AchievementsTimeline />
+                </div>
             </section>
 
             <Footer />
