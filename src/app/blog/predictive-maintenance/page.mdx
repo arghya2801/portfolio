@@ -1,0 +1,110 @@
+import MdxLayout from '@/components/MdxLayout'
+
+<MdxLayout>
+# Predictive Maintenance for Industry Devices
+Predictive maintenance is a subject of massive importance in industries. Failure of a machine can completely derail their entire assembly lines and lead to massive losses. An effective solution would be to predict when they might fail, and take preventive measures accordingly to prevent that, usually by performing accurately scheduled maintenance.
+
+As our 3rd year project, we developed a system that would allow us to make these predictions.
+
+## Stage 1 - Machine Learning
+In order to predict something, we would need historical accurate data. We found a dataset on Kaggle which would allow us to train our machine learning model on. This machine learning model will help us make these prediction.
+
+### 1.1 - The Dataset
+
+| UDI | Product ID | Type | Air temperature [K] | Process temperature [K] | Rotational speed [rpm] | Torque [Nm] | Tool wear [min] | Target | Failure Type |
+|-----|------------|------|---------------------|------------------------|------------------------|-------------|-----------------|--------|--------------|
+| 1   | M14860     | M    | 298.1               | 308.6                  | 1551                   | 42.8        | 0               | 0      | No Failure   |
+| 2   | L47181     | L    | 298.2               | 308.7                  | 1408                   | 46.3        | 3               | 0      | No Failure   |
+| 3   | L47182     | L    | 298.1               | 308.5                  | 1498                   | 49.4        | 5               | 0      | No Failure   |
+| 4   | L47183     | L    | 298.2               | 308.6                  | 1433                   | 39.5        | 7               | 0      | No Failure   |
+| 5   | L47184     | L    | 298.2               | 308.7                  | 1408                   | 40.0        | 9               | 0      | No Failure   |
+
+```python
+>> data.info()
+>> 
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 10000 entries, 0 to 9999
+Data columns (total 10 columns):
+ ##   Column                   Non-Null Count  Dtype  
+---  ------                   --------------  -----  
+ 0   UDI                      10000 non-null  int64  
+ 1   Product ID               10000 non-null  object 
+ 2   Type                     10000 non-null  object 
+ 3   Air temperature [K]      10000 non-null  float64
+ 4   Process temperature [K]  10000 non-null  float64
+ 5   Rotational speed [rpm]   10000 non-null  int64  
+ 6   Torque [Nm]              10000 non-null  float64
+ 7   Tool wear [min]          10000 non-null  int64  
+ 8   Target                   10000 non-null  int64  
+ 9   Failure Type             10000 non-null  object 
+dtypes: float64(3), int64(4), object(3)
+memory usage: 781.4+ KB
+```
+
+|                | count    | mean        | std         | min   | 25%     | 50%     | 75%     | max     |
+|----------------|----------|-------------|-------------|-------|---------|---------|---------|---------|
+| UDI            | 10000.0  | 5000.50000  | 2886.895680 | 1.0   | 2500.75 | 5000.5  | 7500.25 | 10000.0 |
+| Air temperature| 10000.0  | 300.00493   | 2.000259    | 295.3 | 298.30  | 300.1   | 301.50  | 304.5   |
+| Process temperature | 10000.0 | 310.00556 | 1.483734    | 305.7 | 308.80  | 310.1   | 311.10  | 313.8   |
+| Rotational speed| 10000.0  | 1538.77610  | 179.284096  | 1168.0| 1423.00 | 1503.0  | 1612.00 | 2886.0  |
+| Torque         | 10000.0  | 39.98691    | 9.968934    | 3.8   | 33.20   | 40.1    | 46.80   | 76.6    |
+| Tool wear      | 10000.0  | 107.95100   | 63.654147   | 0.0   | 53.00   | 108.0   | 162.00  | 253.0   |
+| Machine failure| 10000.0  | 0.03390     | 0.180981    | 0.0   | 0.00    | 0.0     | 0.00    | 1.0     |
+
+The dataset had 5 parameters  - 
+- Air Temperature
+- Process Temperature
+- Rotational Speed
+- Torque
+- Tool Wear
+
+Based on these, factors at a given point in time, what would be the probability of failure? If the probability is higher than let's say 70%, we will send an alert signalling that maintenance is required.
+
+### 1.2 - Exploratory Data Analysis
+Before we took any action on the data or trained our model, we first had to explore the data and perform some analysis to find the relations between the various features in the dataset.
+### 1.3 - Feature Engineering
+### 1.4 - Data Preprocessing
+### 1.5 - Training the Model
+#### 1.5.1 - Cost Benefit Analysis
+
+## Stage 2 - IoT
+In order to get the required data to feed into the model and make the predictions, we would need various sensors. And to get the data from the sensors we would need IoT devices.
+
+The one we decided to go with was the Arduino UNO, which was simple enough for our needs. We were also considering the Raspberry Pi Pico, which is an equal alternative. We chose the Arduino because of its availability for us.
+
+As students, we did not have access nor the budget for the sensors to measure rotation and torque. So we decided to only utilze the temperature sensors and connect it to our Arduino. For the rest of the features, we simulated them by providing a range from where random values will be generated.
+
+We ran the Arduino code through the Arduino IDE and used the software CoolTerm to write the inputs to a csv file `sensor_readings.py`.
+
+This csv file is uploaded to Google Colab, where we input these data (along with the simulated data in our case) and pass them through our ML model. The ML model makes its predictions, and we add the predictions along with the rest of the parameters in another csv file `sensor_data.csv`.
+
+This file would be cleared once the data has been moved to the backend.
+
+## Stage 3 - Backend
+We are using a PostgreSQL database to store all the sensor data. The `sensor_data.csv` file is passed through an API POST request which inserts any new entries in the file to the database. The only limitation here is that we didn't make a direct upload mechanism, but we need to keep the csv in the backend directory for this to work.
+
+We built the REST APIs in NodeJS + Express server due to the fast development speed it has. NodeJS also has the `pg` module which makes connecting to our postgreSQL database and making DML/DDL commands very easy.
+
+There is also GET request which fetches all the data. This will be sent to the frontend.
+
+We utilized Postman for testing the API, which was really helpful as the frontend wasn't built yet, and Postman was a significant upgrade over simply using the browser to display the JSON outputs.
+## Stage 4 - Frontend
+The frontend was built using ReactJS and TypeScript. TailwindCSS for the styling as well. We used `axios` to integrate our frontend and backend so that we could call that API to get the database data.
+
+The main part of the frontend is the dashboard, which displays a chart of the database, with the id as the x-axis and probability of failure as the y-axis. We plan to make timestamps the x-axis instead by modifying the database, but the id is in chronological order so we were able to temporarily make it work for now.
+
+We built the chart using chartJS.
+
+Whenever the probability of failure goes above 70%, we show warnings on the dashboard. We also have a drop down to choose between various machines.
+## Stage 5 - Cloud Deployment
+### 5.1 - Dockerization
+We dockerized our frontend and backend to make it easy to deploy on the cloud. We decided to do this after realizing that deploying many things on AWS can make our infrastructure more complicated.
+
+There were a lot of dependency issues that cropped up when we tried to run our ML model locally, and when we did resolve them on one system and tried to dockerize it, we were unable to pass our `sensor_readings.py` file to it.
+### 5.2 AWS
+We were unfortunately unable to do this deployement phase on AWS due to the time constraints on our project submission.
+
+- Initial plan -
+
+- Docker plan - 
+</MdxLayout>

@@ -11,7 +11,7 @@ const projects = [
         image: '/images/project1.jpg', // Replace with your image path
         description:
             'Predicts maintenance needs for industrial devices using machine learning algorithms utlizing IoT.',
-        link: '/projects/predictive-maintenance',
+        link: '/blog/predictive-maintenance',
     },
     {
         id: 2,
