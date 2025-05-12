@@ -19,7 +19,7 @@ const projects = [
         image: '/images/project1.jpg', // Replace with your image path
         description:
             'A fully functional e-commerce platform built with Next.js, featuring user authentication, product catalog, shopping cart, and checkout process.',
-        link: '/projects/e-commerce-platform',
+        link: '/blog/e-commerce-platform',
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ const projects = [
         image: '/images/project2.jpg', // Replace with your image path
         description:
             'A personal portfolio website showcasing my skills, projects, and experience. Built with React and Tailwind CSS.',
-        link: '/projects/portfolio-website',
+        link: '/blog/portfolio-website',
     },
     {
         id: 4,
@@ -35,7 +35,7 @@ const projects = [
         image: '/images/project3.jpg', // Replace with your image path
         description:
             'A simple and intuitive task management application allowing users to create, organize, and track their tasks.',
-        link: '/projects/task-management-app',
+        link: '/blog/task-management-app',
     },
     {
         id: 5,
@@ -43,7 +43,7 @@ const projects = [
         image: '/images/project4.jpg', // Replace with your image path
         description:
             'A blog application with features like user authentication, creating and editing posts, and commenting functionality.',
-        link: '/projects/blog-application',
+        link: '/blog/blog-application',
     },
     // Add more projects here
 ];
