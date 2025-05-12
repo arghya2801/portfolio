@@ -1,21 +1,19 @@
 import type { NextConfig } from "next";
 import createMDX from '@next/mdx'
+import remarkGfm from 'remark-gfm'
 
+/** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   /* config options here */
-  // devIndicators: {
-  //   appIsrStatus: false,
-  // },
-  // swcMinify: true,
-  // fastRefresh: true,
-  // images: {
-  //   domains: ['api.svgl.app'],
-  // },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
 };
 
 const withMDX = createMDX({
   extension: /\.(md|mdx)$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
+  },
 })
 
 // export default nextConfig;
