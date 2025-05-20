@@ -2,6 +2,18 @@ import React from 'react';
 
 const certifications = [
   {
+    name: 'AWS Certified Cloud Practitioner',
+    verificationCode: '5db5f4f0bce04fafba688cb1a49af70b',
+    link: 'https://bit.ly/44RcTol',
+    date: '2025-05-14'
+  },
+  {
+    name: 'Oracle AI Vector Search Certified Professional',
+    verificationCode: '319525494DB23AIOCP',
+    link: 'http://bit.ly/455wWzf',
+    date: '2025-05-12'
+  },
+  {
     name: 'Microsoft Azure - AI Fundamentals',
     verificationCode: 'wEKCD-48DY',
     link: 'https://bit.ly/427JYsK',
