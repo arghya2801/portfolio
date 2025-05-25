@@ -2,6 +2,12 @@ import React from 'react';
 
 const certifications = [
   {
+    name: 'AWS Certified AI Practitioner',
+    verificationCode: '2e53321df15b407a9f02296e5f1f0b65',
+    link: 'https://bit.ly/44Pp6d7',
+    date: '2025-05-23'
+  },
+  {
     name: 'AWS Certified Cloud Practitioner',
     verificationCode: '5db5f4f0bce04fafba688cb1a49af70b',
     link: 'https://bit.ly/44RcTol',
