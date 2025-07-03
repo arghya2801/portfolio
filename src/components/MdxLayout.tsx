@@ -18,7 +18,7 @@ function TableOfContents() {
     const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
     const tocItems: TocItem[] = [];
 
-    headings.forEach((heading, index) => {
+    headings.forEach((heading) => {
       const level = parseInt(heading.tagName.charAt(1));
       const text = heading.textContent || "";
       let id = heading.id;
@@ -69,7 +69,7 @@ function TableOfContents() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial position
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [toc]);
@@ -121,12 +121,10 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
     <>
       <Navbar />
       <div className="flex flex-row min-h-screen">
-        {/* Table of Contents Sidebar */}
         <div className="hidden lg:block w-64 p-5 border-r border-gray-200 dark:border-gray-700">
           <TableOfContents />
         </div>
         
-        {/* Main Content */}
         <div className="flex-1 px-5 py-8">
           <div className="max-w-4xl mx-auto prose prose-lg dark:prose-invert prose-headings:scroll-mt-20">
             {children}
