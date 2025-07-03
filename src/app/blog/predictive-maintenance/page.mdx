@@ -1,6 +1,9 @@
 import MdxLayout from '@/components/MdxLayout'
+import Image from 'next/image'
 
 <MdxLayout>
+# Predictive Maintenance for Industry Devices
+
 Predictive maintenance is a subject of massive importance in industries. Failure of a machine can completely derail their entire assembly lines and lead to massive losses. An effective solution would be to predict when they might fail, and take preventive measures accordingly to prevent that, usually by performing accurately scheduled maintenance.
 
 As my 3rd year project, me and my team developed a system that would allow us to make these predictions.
@@ -53,6 +56,14 @@ We had two APIs - inserting data and fetching data.
 
 For fetching data, it was simple since postgres can send the output in JSON format. For inserting the data, we took the csv file generated from the google colab and uploaded it to the backend server which added the entries to our database.
 
+{/* ![Backend Architecture](/public/pred_maintain/epics_backend.png) */}
+<Image 
+  src="/pred_maintain/epics_backend.png" 
+  alt="Backend Architecture" 
+  width={900} 
+  height={600} 
+/>
+
 ### Problems in Stage 2
 #### Duplicate entires in CSV
 
@@ -61,6 +72,7 @@ So remember where I mentioned generating a CSV file with random values? Well eve
 To handle this issue we had to alter our database with a time stamp attribute which would also be part of the CSV file now. Then I wrote a function to compare every timestamp in the csv with the database, and skipped over any duplicated. 
 
 Not the most ideal solution, since we would add each entry line by line right away after getting the prediction, but there is the issue of the asynchronous nature of databases. It is simpler and more read/write efficient to make those entries in bulk. And ideally we also create a new CSV file every time we run the simulations - or when we add the sensors, in every batch of time.
+
 #### PostgreSQL issues in Windows
 
 For some reason we weren't able to figure out, connecting our postgres database to our backend just didn't work on Windows.
@@ -83,6 +95,13 @@ This is the part of the project on which we procrastinated on the most. Our team
 
 We got access to the labs at our college, and we had to use an Arduino UNO instead of our initially planned Raspberry Pi Pico. We only got two DHT sensors which measure temperature and humidity. So we decided to only measure the process and air temperatures and let the other data points be simulated.
 
+<Image 
+  src="/pred_maintain/epics_iot.png" 
+  alt="IoT Architecture" 
+  width={900} 
+  height={600} 
+/>
+
 ### Problems in Stage 4
 #### Unable to stream data to the ML model
 
@@ -104,7 +123,19 @@ The main plan for this is as follows -
 - [ ] Add a Cloudwatch alert to detect new uploads of the sensor data
 - [ ] Connect all the parts together and automate to make it all work with minimal manual efforts
 
+<Image 
+  src="/pred_maintain/epics_cloud.png" 
+  alt="Cloud Architecture" 
+  width={900} 
+  height={600} 
+/>
+
 ---
 
 In conclusion, our project successfully delivered a functional, end-to-end proof-of-concept for a predictive maintenance system. By integrating a machine learning model trained using PyCaret, a Node.js backend with a PostgreSQL database, a React-based monitoring dashboard, and an Arduino-powered IoT component for data acquisition, we created a comprehensive solution. Despite facing challenges such as limited ML expertise, hardware constraints, and integration issues, we employed resourceful solutions at every stage. The result is a working demo that can ingest sensor data, predict machine failure probabilities, and visualize the results, laying a solid foundation for the planned future deployment on a scalable AWS cloud architecture.
+
+---
+
+Credits to my teammates - Vaibhav Kumar Kandhway, Shivam Goel, Yuvraj Singh, Yuvraj Trivedi, Amruth Alur, Nirmit Bansal and Palash Chaturvedi.
+
 </MdxLayout>
