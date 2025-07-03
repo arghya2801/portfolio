@@ -98,7 +98,11 @@ const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
 const CategorySection: React.FC<{ category: SkillCategory }> = ({ category }) => {
   return (
     <div className="mb-8">
-      <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
+      <h3
+        className="text-xl font-semibold mb-4 text-center flex items-center justify-center h-[2.5rem]"
+      >
+        {category.title}
+      </h3>
       <div className="grid grid-cols-1 gap-4">
         {category.skills.map((skill, index) => (
           <SkillCard key={index} skill={skill} />
@@ -110,7 +114,7 @@ const CategorySection: React.FC<{ category: SkillCategory }> = ({ category }) =>
 
 const SkillsGrid: React.FC = () => {
   return (
-    <div className="py-8 grid grid-cols-5 gap-8">
+    <div className="py-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
       {skillCategories.map((category, index) => (
         <CategorySection key={index} category={category} />
       ))}
