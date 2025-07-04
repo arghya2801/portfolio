@@ -48,7 +48,7 @@ export default function Home() {
                             <span className="font-bold">Expertise Includes:</span> C++, Java, JavaScript (React, Node.js, Express), Python (NumPy, Pandas, scikit-learn), SQL & NoSQL databases (Postgres, MySQL, MongoDB), AWS, Docker, and more.
                         </p>
 
-                        <h2>My Resume</h2>
+                        <p><a href="https://drive.google.com/file/d/1cYzFNWAzqDF2ldAKlTyBSH0yFrYSQx5j/view?usp=sharing">My Resume</></p>
 
                         <h2>Contact</h2>
                         <ul className="list-disc pl-6 space-y-2">
