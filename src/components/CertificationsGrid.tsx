@@ -2,6 +2,12 @@ import React from 'react';
 
 const certifications = [
   {
+    name: 'Oracle OCI Data Science Professional',
+    verificationCode: '319525494OCI25DSOCP',
+    link: 'https://bit.ly/45r6Ia4',
+    date: '2025-07-29'
+  },
+  {
     name: 'AWS Certified AI Practitioner',
     verificationCode: '2e53321df15b407a9f02296e5f1f0b65',
     link: 'https://bit.ly/44Pp6d7',
