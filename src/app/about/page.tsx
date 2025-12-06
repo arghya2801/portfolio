@@ -6,10 +6,10 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
     return (
-        <>
+        <div className="animate-fade-in">
             <Navbar />
-            <div className="container mx-auto px-48 py-12">
-                <h1 className="text-6xl font-semibold text-gray-800 dark:text-gray-100 mb-8">About</h1>
+            <div className="container mx-auto px-4 md:px-8 lg:px-16 py-12">
+                <h1 className="text-4xl md:text-6xl font-semibold text-gray-800 dark:text-gray-100 mb-8">About</h1>
                 <hr className="border-gray-300 dark:border-gray-700 py-7" />
 
                 <div className="flex flex-col md:flex-row gap-8">
@@ -69,7 +69,7 @@ export default function Home() {
             </div>
 
             <Footer />
-        </>
+        </div>
     );
 }
 
