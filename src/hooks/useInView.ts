@@ -21,6 +21,7 @@ export function useInView(threshold = 0.1) {
     return () => {
       const element = ref.current;
       if (element) {
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         observer.unobserve(element);
       }
     };

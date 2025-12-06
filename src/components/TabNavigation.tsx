@@ -36,7 +36,7 @@ export default function TabNavigation({ activeTab, onTabChange }: TabNavigationP
                 {tabs.map((tab, index) => (
                     <button
                         key={tab.id}
-                        ref={el => tabsRef.current[index] = el}
+                        ref={el => { tabsRef.current[index] = el; }}
                         onClick={() => onTabChange(tab.id)}
                         className={`
                             px-4 py-2 text-sm font-medium rounded-t-lg transition-colors duration-200 relative
