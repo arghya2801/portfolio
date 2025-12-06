@@ -50,7 +50,7 @@ const projects = [
 
 export default function Projects() {
     return (
-        <>
+        <div className="animate-fade-in">
         <Navbar />
             <div className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
                 <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">My Projects</h1>
@@ -74,6 +74,6 @@ export default function Projects() {
                 </div>
             </div>
         <Footer />
-        </>
+        </div>
     );
 }
