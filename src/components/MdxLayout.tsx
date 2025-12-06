@@ -145,6 +145,7 @@ function TableOfContents({ activeTab }: { activeTab: string }) {
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   const [activeTab, setActiveTab] = useState('deep-dive');
+  const [title, setTitle] = useState<string>('');
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -153,8 +154,20 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
     const container = contentRef.current;
     const children = Array.from(container.children) as HTMLElement[];
     
-    // Reset all to visible first
-    children.forEach(child => child.style.display = 'block');
+    // Find and extract H1
+    const h1 = container.querySelector('h1');
+    if (h1) {
+        // Only set title if it's not set yet to avoid unnecessary re-renders
+        if (!title) setTitle(h1.textContent || '');
+        h1.style.display = 'none';
+    }
+    
+    // Reset all to visible first (except H1)
+    children.forEach(child => {
+        if (child.tagName !== 'H1') {
+            child.style.display = 'block';
+        }
+    });
 
     if (activeTab === 'deep-dive') {
         return; // Show all
@@ -222,6 +235,11 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         
         <div className="flex-1 px-4 md:px-8 lg:px-16 py-8">
           <div className="max-w-4xl mx-auto">
+            {title && (
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-gray-100 animate-fade-in">
+                    {title}
+                </h1>
+            )}
             <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
             <div 
                 ref={contentRef}
