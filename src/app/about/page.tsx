@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
     return (
-        <div className="animate-fade-in">
+        <div>
             <Navbar />
             <div className="container mx-auto px-4 md:px-8 lg:px-16 py-12">
                 <h1 className="text-4xl md:text-6xl font-semibold text-gray-800 dark:text-gray-100 mb-8">About</h1>

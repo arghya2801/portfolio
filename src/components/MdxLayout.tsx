@@ -226,7 +226,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
   }, [activeTab]);
 
   return (
-    <div className="animate-fade-in">
+    <div>
       <Navbar />
       <div className="flex flex-col lg:flex-row min-h-screen">
         <div className="lg:w-64 p-5 lg:border-r border-gray-200 dark:border-gray-700">
@@ -236,7 +236,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         <div className="flex-1 px-4 md:px-8 lg:px-16 py-8">
           <div className="max-w-4xl mx-auto">
             {title && (
-                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-gray-100 animate-fade-in">
+                <h1 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 dark:text-gray-100">
                     {title}
                 </h1>
             )}

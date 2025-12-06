@@ -23,7 +23,7 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
 
 export default function Home() {
     return (
-        <div className="animate-fade-in">
+        <div>
             <Navbar />
             <div className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
                 <div className="">
