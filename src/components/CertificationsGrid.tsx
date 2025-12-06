@@ -60,7 +60,7 @@ const CertificationCard = ({ cert, index }: { cert: typeof certifications[0], in
       ref={ref}
       className={`
         p-4 border border-gray-200 dark:border-gray-700 rounded-lg
-        bg-gray-50 dark:bg-gray-800/90 backdrop-blur-sm
+        bg-gray-50 dark:bg-slate-900/90 backdrop-blur-sm
         shadow-sm hover:shadow-md dark:shadow-none
         hover:bg-white dark:hover:bg-[#020618] hover:border-cyan-500 dark:hover:border-cyan-400
         transition-all duration-500 ease-out

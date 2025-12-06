@@ -83,7 +83,7 @@ const SkillCard: React.FC<{ skill: Skill, index: number }> = ({ skill, index }) 
     <div 
         ref={ref}
         className={`
-            bg-gray-50 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700
+            bg-gray-50 dark:bg-slate-900/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700
             shadow-sm hover:shadow-md dark:shadow-none
             hover:bg-white dark:hover:bg-[#020618] hover:border-cyan-500 dark:hover:border-cyan-400
             rounded-md p-4 transition-all duration-500 ease-out flex items-center gap-2

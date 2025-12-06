@@ -56,7 +56,7 @@ export default function Projects() {
                 <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8 text-center">My Projects</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project) => (
-                        <div key={project.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                        <div key={project.id} className="bg-white dark:bg-slate-900 rounded-lg shadow-md overflow-hidden">
                             {project.image && (
                                 <div className="relative w-full h-48 md:h-64">
                                     <Image src={project.image} alt={project.name} layout="fill" objectFit="cover" className="rounded-t-lg" />

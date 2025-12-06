@@ -38,11 +38,6 @@ const Footer = () => {
                   Projects
                 </Link>
               </li>
-              <li>
-                <Link href="/blog" className="text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
-                  Blog
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -70,7 +65,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 dark:text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Arghya Chakrabarty. All rights reserved.
+            &copy; {new Date().getFullYear()}        Designed and developed by Arghya Chakrabarty.
           </p>
         </div>
       </div>
