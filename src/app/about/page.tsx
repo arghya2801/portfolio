@@ -1,7 +1,7 @@
 "use client"
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-// import Image from "next/image";
+import Image from "next/image";
 
 
 export default function Home() {
@@ -17,9 +17,11 @@ export default function Home() {
                     <div className="md:w-1/3 flex flex-col items-center">
                         {/* Image Placeholder */}
                         <div className="w-48 h-48 rounded-full overflow-hidden mb-4 border-4 border-gray-300 dark:border-gray-700">
-                            <img
-                                src="Arghya_Photo_2022.png"
+                            <Image
+                                src="/Arghya_Photo_2022.png"
                                 alt="Arghya Chakrabarty"
+                                width={192}
+                                height={192}
                                 className="w-full h-full object-contain"
                             />
                         </div>

@@ -223,7 +223,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
         }
     }
 
-  }, [activeTab]);
+  }, [activeTab, title]);
 
   return (
     <div>

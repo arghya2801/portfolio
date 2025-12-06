@@ -27,6 +27,7 @@ export default function TabNavigation({ activeTab, onTabChange }: TabNavigationP
                 width: activeButton.offsetWidth,
             });
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeTab]);
 
     return (

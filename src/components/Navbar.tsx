@@ -23,7 +23,7 @@ const NavItem: React.FC<NavItemProps> = ({ href, label }) => {
 };
 
 const ThemeToggle = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {

@@ -19,8 +19,9 @@ export function useInView(threshold = 0.1) {
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      const element = ref.current;
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, [threshold]);

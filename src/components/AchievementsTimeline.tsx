@@ -28,7 +28,14 @@ interface AchievementsTimelineProps {
     }[];
 }
 
-const AchievementItem = ({ ach, idx }: { ach: any, idx: number }) => {
+interface Achievement {
+    title: string;
+    description?: string;
+    date?: string;
+    details?: string[];
+}
+
+const AchievementItem = ({ ach, idx }: { ach: Achievement, idx: number }) => {
     const { ref, isInView } = useInView(0.1);
     
     return (
