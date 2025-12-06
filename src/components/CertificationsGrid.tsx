@@ -1,4 +1,5 @@
 import React from 'react';
+import { useInView } from '@/hooks/useInView';
 
 const certifications = [
   {
@@ -51,20 +52,38 @@ const certifications = [
   }
 ];
 
+const CertificationCard = ({ cert, index }: { cert: typeof certifications[0], index: number }) => {
+  const { ref, isInView } = useInView(0.1);
+  
+  return (
+    <div 
+      ref={ref}
+      className={`
+        p-4 border border-gray-200 dark:border-gray-700 rounded-lg
+        bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm
+        hover:bg-white dark:hover:bg-[#020618] hover:border-indigo-500 dark:hover:border-indigo-400
+        transition-all duration-500 ease-out
+        ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+      `}
+      style={{ transitionDelay: `${index * 50}ms` }}
+    >
+      <h3 className="text-2xl font-semibold pb-1.5 text-gray-800 dark:text-gray-100">{cert.name}</h3>
+      <p className="text-gray-700 dark:text-gray-300">
+        <strong>Verification Code:</strong> {cert.verificationCode}
+      </p>
+      <p className="text-gray-700 dark:text-gray-300">
+        <strong>Date:</strong> {cert.date}
+      </p>
+      <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">View Certification</a>
+    </div>
+  );
+};
+
 const CertificationsGrid = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {certifications.map((cert, index) => (
-        <div key={index} className="p-4 border border-gray-300 rounded-lg shadow-sm">
-          <h3 className="text-2xl font-semibold pb-1.5">{cert.name}</h3>
-          <p className="text-gray-700">
-            <strong>Verification Code:</strong> {cert.verificationCode}
-          </p>
-          <p className="text-gray-700">
-            <strong>Date:</strong> {cert.date}
-          </p>
-          <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">View Certification</a>
-        </div>
+        <CertificationCard key={index} cert={cert} index={index} />
       ))}
     </div>
   );

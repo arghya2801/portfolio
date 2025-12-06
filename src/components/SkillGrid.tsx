@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image';
-// import { useEffect, useState } from 'react';
+import { useInView } from '@/hooks/useInView';
 
 interface Skill {
     name: string;
@@ -74,12 +74,22 @@ const skillCategories: SkillCategory[] = [
     }
 ];
 
-const SkillCard: React.FC<{ skill: Skill }> = ({ skill }) => {
+const SkillCard: React.FC<{ skill: Skill, index: number }> = ({ skill, index }) => {
   const svgPath = `/svgs/${skill.slug}.svg`;
   const placeholder = "/file.svg"; // Ensure this path is correct
+  const { ref, isInView } = useInView(0.1);
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-800 rounded-md p-4 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 flex items-center gap-2">
+    <div 
+        ref={ref}
+        className={`
+            bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700
+            hover:bg-white dark:hover:bg-[#020618] hover:border-indigo-500 dark:hover:border-indigo-400
+            rounded-md p-4 transition-all duration-500 ease-out flex items-center gap-2
+            ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
+        `}
+        style={{ transitionDelay: `${index * 50}ms` }}
+    >
       <div className="h-8 w-8 flex items-center justify-center">
         <Image
           src={svgPath}
@@ -105,7 +115,7 @@ const CategorySection: React.FC<{ category: SkillCategory }> = ({ category }) =>
       </h3>
       <div className="grid grid-cols-1 gap-4">
         {category.skills.map((skill, index) => (
-          <SkillCard key={index} skill={skill} />
+          <SkillCard key={index} skill={skill} index={index} />
         ))}
       </div>
     </div>
