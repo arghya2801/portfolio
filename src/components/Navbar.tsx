@@ -1,5 +1,9 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useTheme } from "next-themes"
+import { Moon, Sun } from "lucide-react"
 
 interface NavItemProps {
   href: string;
@@ -18,12 +22,40 @@ const NavItem: React.FC<NavItemProps> = ({ href, label }) => {
   );
 };
 
+const ThemeToggle = () => {
+  const { theme, setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return <div className="w-9 h-9" /> // Placeholder to prevent layout shift
+  }
+
+  return (
+    <button
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      aria-label="Toggle theme"
+    >
+      {resolvedTheme === "dark" ? (
+        <Sun className="h-5 w-5 text-gray-100" />
+      ) : (
+        <Moon className="h-5 w-5 text-gray-900" />
+      )}
+    </button>
+  )
+}
+
 const Navbar: React.FC = () => {
   return (
-    <nav className="flex justify-end gap-x-6 py-4 pr-32">
+    <nav className="flex items-center justify-end gap-x-6 py-4 pr-8 md:pr-32">
       <NavItem href="/" label="Home" />
       <NavItem href="/projects" label="Projects" />
       <NavItem href="/about" label="About" />
+      <ThemeToggle />
     </nav>
   );
 };
