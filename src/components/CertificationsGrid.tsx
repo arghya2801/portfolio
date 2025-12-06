@@ -63,6 +63,7 @@ const CertificationCard = ({ cert, index }: { cert: typeof certifications[0], in
         bg-gray-50 dark:bg-slate-900/90 backdrop-blur-sm
         shadow-sm hover:shadow-md dark:shadow-none
         hover:bg-white dark:hover:bg-[#020618] hover:border-cyan-500 dark:hover:border-cyan-400
+        hover:scale-102
         transition-all duration-500 ease-out
         ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
       `}
