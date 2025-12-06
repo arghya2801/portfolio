@@ -5,12 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 ::selection {
-  background-color: #5e59ff; /* Replace with your desired background color */
+  background-color: #1fb4d5; /* Replace with your desired background color */
   color: black; /* Optional: Replace with your desired text color */
 }
 
 ::-moz-selection {
-  background-color: #5e59ff; /* Replace with your desired background color */
+  background-color: #1fb4d5; /* Replace with your desired background color */
   color: black; /* Optional: Replace with your desired text color */
 }
 

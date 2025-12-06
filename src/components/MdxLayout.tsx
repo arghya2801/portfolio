@@ -144,7 +144,7 @@ function TableOfContents({ activeTab }: { activeTab: string }) {
 }
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
-  const [activeTab, setActiveTab] = useState('deep-dive');
+  const [activeTab, setActiveTab] = useState('overview');
   const [title, setTitle] = useState<string>('');
   const contentRef = useRef<HTMLDivElement>(null);
 
