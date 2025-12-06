@@ -83,8 +83,9 @@ const SkillCard: React.FC<{ skill: Skill, index: number }> = ({ skill, index }) 
     <div 
         ref={ref}
         className={`
-            bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700
-            hover:bg-white dark:hover:bg-[#020618] hover:border-indigo-500 dark:hover:border-indigo-400
+            bg-gray-50 dark:bg-gray-800/90 backdrop-blur-sm border border-gray-200 dark:border-gray-700
+            shadow-sm hover:shadow-md dark:shadow-none
+            hover:bg-white dark:hover:bg-[#020618] hover:border-cyan-500 dark:hover:border-cyan-400
             rounded-md p-4 transition-all duration-500 ease-out flex items-center gap-2
             ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
         `}

@@ -65,7 +65,7 @@ export default function Projects() {
                             <div className="p-6">
                                 <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">{project.name}</h2>
                                 <p className="text-gray-700 dark:text-gray-300 text-sm mb-4">{project.description}</p>
-                                <Link href={project.link} className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">
+                                <Link href={project.link} className="text-cyan-600 dark:text-cyan-400 hover:underline font-semibold">
                                     Read More
                                 </Link>
                             </div>

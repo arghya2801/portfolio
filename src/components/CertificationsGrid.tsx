@@ -60,8 +60,9 @@ const CertificationCard = ({ cert, index }: { cert: typeof certifications[0], in
       ref={ref}
       className={`
         p-4 border border-gray-200 dark:border-gray-700 rounded-lg
-        bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm
-        hover:bg-white dark:hover:bg-[#020618] hover:border-indigo-500 dark:hover:border-indigo-400
+        bg-gray-50 dark:bg-gray-800/90 backdrop-blur-sm
+        shadow-sm hover:shadow-md dark:shadow-none
+        hover:bg-white dark:hover:bg-[#020618] hover:border-cyan-500 dark:hover:border-cyan-400
         transition-all duration-500 ease-out
         ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}
       `}
@@ -74,7 +75,7 @@ const CertificationCard = ({ cert, index }: { cert: typeof certifications[0], in
       <p className="text-gray-700 dark:text-gray-300">
         <strong>Date:</strong> {cert.date}
       </p>
-      <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">View Certification</a>
+      <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-cyan-600 dark:text-cyan-400 hover:underline">View Certification</a>
     </div>
   );
 };

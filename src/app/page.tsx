@@ -36,12 +36,12 @@ export default function Home() {
                                 backSpeed={30}
                                 backDelay={2000}
                                 loop={true}
-                                className="text-indigo-600 dark:text-indigo-400" />
+                                className="text-cyan-600 dark:text-cyan-400" />
                         </h1>
                         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6">
                             A passionate Full Stack Developer with a knack for building scalable and user-friendly web applications, and a strong interest in cloud computing. I thrive on turning complex problems into elegant solutions.
                         </p>
-                        <Link href="/projects" className="bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300">
+                        <Link href="/projects" className="bg-cyan-600 dark:bg-cyan-500 hover:bg-cyan-700 dark:hover:bg-cyan-600 text-white font-semibold py-3 px-6 rounded-md transition duration-300">
                             View My Projects
                         </Link>
                     </div>
@@ -49,13 +49,13 @@ export default function Home() {
             </div>
 
             <AnimatedSection className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
-                <h2 className="text-4xl font-bold text-indigo-500 dark:text-indigo-400 mb-6">Skills</h2>
+                <h2 className="text-4xl font-bold text-cyan-600 dark:text-cyan-400 mb-6">Skills</h2>
                 <div className="border-b border-gray-400 dark:border-gray-600 w-22"></div> {/* Adjust width as needed */}
                 <SkillsGrid />
             </AnimatedSection>
 
             <AnimatedSection className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
-                <h2 className="text-4xl font-bold text-indigo-500 dark:text-indigo-400 mb-6">Certifications</h2>
+                <h2 className="text-4xl font-bold text-cyan-600 dark:text-cyan-400 mb-6">Certifications</h2>
                 <div className="border-b border-gray-400 dark:border-gray-600 w-57"></div> {/* Adjust width as needed */}
                 <div className="mt-6">
                     <CertificationsGrid />
@@ -63,7 +63,7 @@ export default function Home() {
             </AnimatedSection>
 
             <AnimatedSection className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
-                <h2 className="text-4xl font-bold text-indigo-500 dark:text-indigo-400 mb-6">Acheivements</h2>
+                <h2 className="text-4xl font-bold text-cyan-600 dark:text-cyan-400 mb-6">Acheivements</h2>
                 <div className="border-b border-gray-400 dark:border-gray-600 w-60"></div> {/* Adjust width as needed */}
                 <div className="mt-6">
                     <AchievementsTimeline />

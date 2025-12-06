@@ -22,7 +22,7 @@ export default function TabNavigation({ activeTab, onTabChange }: TabNavigationP
                     className={`
                         px-4 py-2 text-sm font-medium rounded-t-lg transition-colors duration-200
                         ${activeTab === tab.id
-                            ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 dark:border-indigo-400'
+                            ? 'bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 dark:text-cyan-400 border-b-2 border-cyan-600 dark:border-cyan-400'
                             : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800/50'
                         }
                     `}

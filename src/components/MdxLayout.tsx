@@ -125,7 +125,7 @@ function TableOfContents({ activeTab }: { activeTab: string }) {
                 block w-full text-left text-sm py-1 px-2 rounded transition-colors duration-200
                 hover:bg-gray-200 dark:hover:bg-gray-700
                 ${activeId === item.id 
-                    ? "bg-indigo-100 dark:bg-[#5e59ff] text-indigo-600 dark:text-indigo-100 font-medium" 
+                    ? "bg-cyan-100 dark:bg-[#1fb4d5] text-cyan-600 dark:text-cyan-100 font-medium" 
                     : "text-gray-700 dark:text-gray-300"
                 }
                 `}
