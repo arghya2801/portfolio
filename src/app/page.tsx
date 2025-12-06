@@ -7,10 +7,23 @@ import SkillsGrid from "@/components/SkillGrid";
 // import Image from "next/image";
 import Link from "next/link";
 import { ReactTyped } from "react-typed";
+import { useInView } from "@/hooks/useInView";
+
+function AnimatedSection({ children, className = "" }: { children: React.ReactNode, className?: string }) {
+    const { ref, isInView } = useInView(0.1);
+    return (
+        <div
+            ref={ref}
+            className={`transition-all duration-1000 ease-out transform ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} ${className}`}
+        >
+            {children}
+        </div>
+    );
+}
 
 export default function Home() {
     return (
-        <>
+        <div className="animate-fade-in">
             <Navbar />
             <div className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
                 <div className="">
@@ -35,30 +48,30 @@ export default function Home() {
                 </div>
             </div>
 
-            <section className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
+            <AnimatedSection className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
                 <h2 className="text-4xl font-bold text-indigo-500 dark:text-indigo-400 mb-6">Skills</h2>
                 <div className="border-b border-gray-400 dark:border-gray-600 w-22"></div> {/* Adjust width as needed */}
                 <SkillsGrid />
-            </section>
+            </AnimatedSection>
 
-            <section className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
+            <AnimatedSection className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
                 <h2 className="text-4xl font-bold text-indigo-500 dark:text-indigo-400 mb-6">Certifications</h2>
                 <div className="border-b border-gray-400 dark:border-gray-600 w-57"></div> {/* Adjust width as needed */}
                 <div className="mt-6">
                     <CertificationsGrid />
                 </div>
-            </section>
+            </AnimatedSection>
 
-            <section className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
+            <AnimatedSection className="container mx-auto px-4 md:px-8 lg:px-16 py-16">
                 <h2 className="text-4xl font-bold text-indigo-500 dark:text-indigo-400 mb-6">Acheivements</h2>
                 <div className="border-b border-gray-400 dark:border-gray-600 w-60"></div> {/* Adjust width as needed */}
                 <div className="mt-6">
                     <AchievementsTimeline />
                 </div>
-            </section>
+            </AnimatedSection>
 
             <Footer />
-        </>
+        </div>
     );
 }
 
