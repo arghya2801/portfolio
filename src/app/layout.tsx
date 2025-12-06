@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className="bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-slate-950 dark:to-indigo-950 min-h-screen"
       >
         <ThemeProvider
             attribute="class"
