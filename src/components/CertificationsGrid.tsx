@@ -3,6 +3,12 @@ import { useInView } from '@/hooks/useInView';
 
 const certifications = [
   {
+    name: 'AWS Certified Solutions Architect - Associate',
+    verificationCode: '47cd3045f57840d08b247abd844bd3ee',
+    link: 'https://bit.ly/4jB0l9K',
+    date: '2026-01-13'
+  },
+  {
     name: 'Oracle OCI Certified Generative AI Professional',
     verificationCode: '319525494OCI25GAlOCP',
     link: 'https://bit.ly/47hmfsV',
